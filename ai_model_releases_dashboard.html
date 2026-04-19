@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anticipated AI Model Releases Dashboard</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --panel-2: #1f232c;
+    --border: #2a2f3a;
+    --text: #e6e8ee;
+    --muted: #8a92a4;
+    --accent: #6ea8fe;
+    --open: #22c55e;
+    --closed: #ef4444;
+    --gated: #f59e0b;
+    --confirmed: #22c55e;
+    --rumored: #eab308;
+    --speculated: #94a3b8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+  header {
+    padding: 28px 32px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  h1 {
+    margin: 0 0 4px;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .container {
+    padding: 20px 32px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .stat {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .stat-value {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+    align-items: center;
+  }
+  input[type="search"], select {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: inherit;
+    min-height: 34px;
+  }
+  input[type="search"] {
+    flex: 1 1 220px;
+    min-width: 180px;
+  }
+  input[type="search"]:focus, select:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .clear-btn {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  .clear-btn:hover { color: var(--text); border-color: var(--accent); }
+  .table-wrap {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead {
+    background: var(--panel-2);
+  }
+  th {
+    text-align: left;
+    padding: 12px 14px;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  th:hover { color: var(--text); }
+  th .sort-arrow { margin-left: 4px; opacity: 0.5; }
+  th.sorted .sort-arrow { opacity: 1; color: var(--accent); }
+  td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(110, 168, 254, 0.04); }
+  .model-name { font-weight: 600; color: var(--text); }
+  .company { color: var(--muted); font-size: 12px; }
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+  .badge-open { background: rgba(34, 197, 94, 0.15); color: var(--open); }
+  .badge-closed { background: rgba(239, 68, 68, 0.15); color: var(--closed); }
+  .badge-gated { background: rgba(245, 158, 11, 0.15); color: var(--gated); }
+  .badge-openweights { background: rgba(34, 197, 94, 0.10); color: var(--open); border: 1px dashed var(--open); }
+  .conf-Confirmed { color: var(--confirmed); font-weight: 600; }
+  .conf-Rumored { color: var(--rumored); }
+  .conf-Speculated { color: var(--speculated); font-style: italic; }
+  .notes {
+    color: var(--muted);
+    font-size: 12px;
+    max-width: 340px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .source-link { font-size: 12px; }
+  .empty {
+    padding: 40px;
+    text-align: center;
+    color: var(--muted);
+  }
+  footer {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+  }
+  footer p { margin: 4px 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Anticipated AI Model Releases</h1>
+  <div class="subtitle">Tracking upcoming frontier and open-source models · Last updated 2026-04-19</div>
+</header>
+
+<div class="container">
+
+  <div class="stats" id="stats"></div>
+
+  <div class="controls">
+    <input type="search" id="search" placeholder="Search model, company, notes...">
+    <select id="filter-source">
+      <option value="">All sources</option>
+      <option value="Open">Open</option>
+      <option value="Open Weights">Open Weights</option>
+      <option value="Closed">Closed</option>
+      <option value="Closed (gated)">Closed (gated)</option>
+    </select>
+    <select id="filter-confidence">
+      <option value="">All confidence</option>
+      <option value="Confirmed">Confirmed</option>
+      <option value="Rumored">Rumored</option>
+      <option value="Speculated">Speculated</option>
+    </select>
+    <select id="filter-company">
+      <option value="">All companies</option>
+    </select>
+    <button class="clear-btn" id="clear">Clear filters</button>
+  </div>
+
+  <div class="table-wrap">
+    <table id="table">
+      <thead>
+        <tr>
+          <th data-key="model">Model<span class="sort-arrow">↕</span></th>
+          <th data-key="company">Company<span class="sort-arrow">↕</span></th>
+          <th data-key="source">Source<span class="sort-arrow">↕</span></th>
+          <th data-key="date">Anticipated Release<span class="sort-arrow">↕</span></th>
+          <th data-key="params">Parameters<span class="sort-arrow">↕</span></th>
+          <th data-key="modality">Modality<span class="sort-arrow">↕</span></th>
+          <th data-key="confidence">Confidence<span class="sort-arrow">↕</span></th>
+          <th>Notes</th>
+          <th>Ref</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div id="empty" class="empty" style="display:none">No matching models.</div>
+  </div>
+
+  <footer>
+    <p>All dates are rumored/speculated unless marked Confirmed. Frontier labs typically do not disclose parameter counts for recent models.</p>
+    <p>Data sourced from public reporting, lab blogs, r/LocalLLaMA, and industry analysis. Click "Ref" for the primary source.</p>
+  </footer>
+
+</div>
+
+<script>
+const DATA = [
+  {
+    model: "GPT-6",
+    codename: "Spud",
+    company: "OpenAI",
+    source: "Closed",
+    date: "Q2 2026 (May-July)",
+    dateSort: "2026-06",
+    params: "Unknown",
+    modality: "Multimodal",
+    confidence: "Rumored",
+    notes: "Pretraining reportedly finished March 24, 2026; Altman said launch is \"a few weeks\" away.",
+    url: "https://findskill.ai/blog/gpt-6-release-date/"
+  },
+  {
+    model: "Claude Sonnet 5",
+    codename: "Fennec",
+    company: "Anthropic",
+    source: "Closed",
+    date: "Q2–Q3 2026",
+    dateSort: "2026-07",
+    params: "Unknown",
+    modality: "Multimodal",
+    confidence: "Rumored",
+    notes: "Alignment-faking behaviors found in testing may delay release.",
+    url: "https://claude5.com/news/when-is-claude-5-coming-out-release-date-prediction"
+  },
+  {
+    model: "Claude Opus 5",
+    codename: "",
+    company: "Anthropic",
+    source: "Closed",
+    date: "Q3 2026",
+    dateSort: "2026-08",
+    params: "Unknown",
+    modality: "Multimodal",
+    confidence: "Rumored",
+    notes: "Timeline tied to Sonnet 5 release and safety validation.",
+    url: "https://claude5.com/"
+  },
+  {
+    model: "Claude Mythos",
+    codename: "",
+    company: "Anthropic",
+    source: "Closed (gated)",
+    date: "Q2 2026",
+    dateSort: "2026-05",
+    params: "Unknown",
+    modality: "Multimodal",
+    confidence: "Rumored",
+    notes: "Reportedly gated to ~50 orgs via Project Glasswing; not publicly available.",
+    url: "https://whatllm.org/blog/new-ai-models-april-2026"
+  },
+  {
+    model: "Gemini 3.1 Ultra",
+    codename: "",
+    company: "Google DeepMind",
+    source: "Closed",
+    date: "Q2 2026",
+    dateSort: "2026-05",
+    params: "Unknown",
+    modality: "Multimodal",
+    confidence: "Rumored",
+    notes: "Follows Gemini 3.1 Pro (released Feb 19, 2026).",
+    url: "https://llm-stats.com/llm-updates"
+  },
+  {
+    model: "Grok 5",
+    codename: "",
+    company: "xAI",
+    source: "Closed",
+    date: "Q2 2026",
+    dateSort: "2026-06",
+    params: "~6T (MoE)",
+    modality: "Multimodal",
+    confidence: "Rumored",
+    notes: "Training on Colossus 2 supercluster; missed original Q1 2026 window.",
+    url: "https://www.nxcode.io/resources/news/grok-5-release-date-latest-news-2026"
+  },
+  {
+    model: "DeepSeek V4",
+    codename: "",
+    company: "DeepSeek",
+    source: "Open",
+    date: "April–May 2026",
+    dateSort: "2026-05",
+    params: "~1T (37B active MoE)",
+    modality: "Multimodal",
+    confidence: "Rumored",
+    notes: "Reuters reported launch in \"next few weeks\" on April 3, 2026; 1M token context; runs on Huawei chips.",
+    url: "https://www.aibase.com/news/25790"
+  },
+  {
+    model: "Kimi K3",
+    codename: "",
+    company: "Moonshot AI",
+    source: "Open",
+    date: "2026 (TBD)",
+    dateSort: "2026-12",
+    params: "~3–4T (rumored)",
+    modality: "Multimodal",
+    confidence: "Rumored",
+    notes: "Team says \"10x better than K2.5\"; may incorporate Kimi Linear attention.",
+    url: "https://kimik3.xyz/"
+  },
+  {
+    model: "Kimi K2.6 Code Preview",
+    codename: "",
+    company: "Moonshot AI",
+    source: "Open",
+    date: "~May 2026",
+    dateSort: "2026-05",
+    params: "Unknown",
+    modality: "Text / Code",
+    confidence: "Rumored",
+    notes: "Coding / agent focused; formal release targeted around May 2026.",
+    url: "https://kimi-k2.org/blog/23-kimi-k2-6-code-preview"
+  },
+  {
+    model: "GLM-6",
+    codename: "",
+    company: "Z.ai (Zhipu)",
+    source: "Open",
+    date: "H2 2026",
+    dateSort: "2026-10",
+    params: "Unknown",
+    modality: "Multimodal",
+    confidence: "Speculated",
+    notes: "No official roadmap; GLM-5.1 open-sourced Apr 8, 2026 — next major version unannounced.",
+    url: "https://en.wikipedia.org/wiki/Z.ai"
+  },
+  {
+    model: "MiniMax M3",
+    codename: "",
+    company: "MiniMax",
+    source: "Open",
+    date: "H2 2026",
+    dateSort: "2026-10",
+    params: "Unknown",
+    modality: "Multimodal",
+    confidence: "Speculated",
+    notes: "No official roadmap; M2.7 released Apr 12, 2026 — next major version unannounced.",
+    url: "https://www.minimax.io/news/minimax-m27-en"
+  },
+  {
+    model: "Llama 4 Behemoth",
+    codename: "",
+    company: "Meta",
+    source: "Open Weights",
+    date: "2026 (TBD)",
+    dateSort: "2026-12",
+    params: ">2T (rumored)",
+    modality: "Multimodal",
+    confidence: "Rumored",
+    notes: "Reportedly still in training as of early 2026; no confirmed release date.",
+    url: "https://www.aimagicx.com/blog/qwen-3-5-vs-llama-vs-mistral-china-open-source-ai-2026"
+  }
+];
+
+// Populate company filter
+const companySelect = document.getElementById("filter-company");
+[...new Set(DATA.map(d => d.company))].sort().forEach(c => {
+  const o = document.createElement("option");
+  o.value = c; o.textContent = c;
+  companySelect.appendChild(o);
+});
+
+// Stats
+function renderStats(rows) {
+  const total = rows.length;
+  const open = rows.filter(r => r.source.startsWith("Open")).length;
+  const closed = rows.filter(r => r.source.startsWith("Closed")).length;
+  const q2 = rows.filter(r => r.dateSort >= "2026-04" && r.dateSort <= "2026-06").length;
+  const q3 = rows.filter(r => r.dateSort >= "2026-07" && r.dateSort <= "2026-09").length;
+  document.getElementById("stats").innerHTML = `
+    <div class="stat"><div class="stat-label">Total tracked</div><div class="stat-value">${total}</div></div>
+    <div class="stat"><div class="stat-label">Open / Open weights</div><div class="stat-value" style="color:var(--open)">${open}</div></div>
+    <div class="stat"><div class="stat-label">Closed</div><div class="stat-value" style="color:var(--closed)">${closed}</div></div>
+    <div class="stat"><div class="stat-label">Expected Q2 2026</div><div class="stat-value">${q2}</div></div>
+    <div class="stat"><div class="stat-label">Expected Q3 2026</div><div class="stat-value">${q3}</div></div>
+  `;
+}
+
+function badgeFor(source) {
+  if (source === "Open") return `<span class="badge badge-open">Open</span>`;
+  if (source === "Open Weights") return `<span class="badge badge-openweights">Open Weights</span>`;
+  if (source === "Closed (gated)") return `<span class="badge badge-gated">Gated</span>`;
+  return `<span class="badge badge-closed">Closed</span>`;
+}
+
+let sortKey = "dateSort";
+let sortAsc = true;
+
+function render() {
+  const q = document.getElementById("search").value.toLowerCase();
+  const fs = document.getElementById("filter-source").value;
+  const fc = document.getElementById("filter-confidence").value;
+  const fco = document.getElementById("filter-company").value;
+
+  let rows = DATA.filter(r => {
+    if (fs && r.source !== fs) return false;
+    if (fc && r.confidence !== fc) return false;
+    if (fco && r.company !== fco) return false;
+    if (q) {
+      const hay = `${r.model} ${r.codename} ${r.company} ${r.notes} ${r.params}`.toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  const key = sortKey === "date" ? "dateSort" : sortKey;
+  rows.sort((a, b) => {
+    const va = (a[key] || "").toString().toLowerCase();
+    const vb = (b[key] || "").toString().toLowerCase();
+    if (va < vb) return sortAsc ? -1 : 1;
+    if (va > vb) return sortAsc ? 1 : -1;
+    return 0;
+  });
+
+  const tbody = document.getElementById("tbody");
+  tbody.innerHTML = rows.map(r => `
+    <tr>
+      <td>
+        <div class="model-name">${r.model}</div>
+        ${r.codename ? `<div class="company">codename: ${r.codename}</div>` : ""}
+      </td>
+      <td>${r.company}</td>
+      <td>${badgeFor(r.source)}</td>
+      <td>${r.date}</td>
+      <td>${r.params}</td>
+      <td>${r.modality}</td>
+      <td><span class="conf-${r.confidence}">${r.confidence}</span></td>
+      <td class="notes">${r.notes}</td>
+      <td><a class="source-link" href="${r.url}" target="_blank" rel="noopener">link ↗</a></td>
+    </tr>
+  `).join("");
+
+  document.getElementById("empty").style.display = rows.length === 0 ? "block" : "none";
+
+  document.querySelectorAll("th").forEach(th => {
+    th.classList.toggle("sorted", th.dataset.key === sortKey);
+    const arrow = th.querySelector(".sort-arrow");
+    if (arrow && th.dataset.key === sortKey) arrow.textContent = sortAsc ? "↑" : "↓";
+    else if (arrow) arrow.textContent = "↕";
+  });
+
+  renderStats(rows);
+}
+
+document.querySelectorAll("th[data-key]").forEach(th => {
+  th.addEventListener("click", () => {
+    const k = th.dataset.key;
+    if (sortKey === k) sortAsc = !sortAsc;
+    else { sortKey = k; sortAsc = true; }
+    render();
+  });
+});
+
+["search", "filter-source", "filter-confidence", "filter-company"].forEach(id => {
+  document.getElementById(id).addEventListener("input", render);
+  document.getElementById(id).addEventListener("change", render);
+});
+
+document.getElementById("clear").addEventListener("click", () => {
+  document.getElementById("search").value = "";
+  document.getElementById("filter-source").value = "";
+  document.getElementById("filter-confidence").value = "";
+  document.getElementById("filter-company").value = "";
+  render();
+});
+
+render();
+</script>
+</body>
+</html>
