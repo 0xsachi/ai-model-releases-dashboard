@@ -188,7 +188,7 @@
 
 <header>
   <h1>Anticipated AI Model Releases</h1>
-  <div class="subtitle">Tracking upcoming frontier and open-source models · Last updated 2026-04-19</div>
+  <div class="subtitle">Tracking upcoming frontier and open-source models · Last updated 2026-04-26</div>
 </header>
 
 <div class="container">
@@ -247,29 +247,16 @@
 const DATA = [
   {
     model: "GPT-6",
-    codename: "Spud",
+    codename: "",
     company: "OpenAI",
     source: "Closed",
-    date: "May–June 2026",
-    dateSort: "2026-06",
+    date: "H2 2026–2027 (TBD)",
+    dateSort: "2026-10",
     params: "Unknown",
     modality: "Multimodal",
-    confidence: "Rumored",
-    notes: "Pre-training finished March 24, 2026 at Stargate/Abilene; April 14 rumored window passed without announcement; Polymarket at ~72% for by-April-30 contract; Altman's 'few weeks' from March 24 points to May–June.",
-    url: "https://findskill.ai/blog/gpt-6-release-date/"
-  },
-  {
-    model: "Claude Sonnet 5",
-    codename: "Fennec",
-    company: "Anthropic",
-    source: "Closed",
-    date: "Q2 2026",
-    dateSort: "2026-05",
-    params: "Unknown",
-    modality: "Multimodal",
-    confidence: "Rumored",
-    notes: "Leaked onto Vertex AI staging as claude-sonnet-5@20260203; MacObserver (Apr 2026) reports release is imminent per rumors; still not publicly launched as of April 19, 2026; latest public Anthropic model is Opus 4.7 (Apr 16).",
-    url: "https://www.macobserver.com/news/anthropic-is-close-to-releasing-claude-sonnet-5-per-rumors/"
+    confidence: "Speculated",
+    notes: "Codename 'Spud' shipped as GPT-5.5 on April 23, 2026 (not as GPT-6); GPT-6 proper is the next major numbered release after GPT-5.5; no official timeline from OpenAI; H2 2026 or later widely speculated; Polymarket market active.",
+    url: "https://polymarket.com/event/gpt-6-released-by"
   },
   {
     model: "Claude Opus 5",
@@ -281,21 +268,8 @@ const DATA = [
     params: "Unknown",
     modality: "Multimodal",
     confidence: "Rumored",
-    notes: "Expected to follow Claude Sonnet 5 (Fennec); timeline tied to Sonnet 5 launch and safety evaluation.",
+    notes: "Claude Sonnet 5 (Fennec) shipped April 1, 2026; Claude Mythos Preview (codename Capybara) released April 8 in restricted Project Glasswing consortium; Opus 5 expected as next general public flagship; timeline tied to safety evaluations.",
     url: "https://manifold.markets/CalibratedGhosts/will-anthropic-release-claude-5-opu"
-  },
-  {
-    model: "Gemini 3.1 Ultra",
-    codename: "",
-    company: "Google DeepMind",
-    source: "Closed",
-    date: "Q2 2026",
-    dateSort: "2026-05",
-    params: "Unknown",
-    modality: "Multimodal",
-    confidence: "Rumored",
-    notes: "Follows Gemini 3.1 Pro (released Feb 19, 2026); Ultra tier benchmarked at 94.3% on GPQA Diamond in early reporting; no official release date announced.",
-    url: "https://smartchunks.com/google-gemini-3-1-ultra-gpqa-diamond-benchmark/"
   },
   {
     model: "Grok 5",
@@ -307,33 +281,20 @@ const DATA = [
     params: "~6T (MoE)",
     modality: "Multimodal",
     confidence: "Rumored",
-    notes: "Training on Colossus 2 supercluster; Q1 2026 window missed; training reportedly completing ~April 2026; public beta May–June most-cited window; latest shipped model is Grok 4.20 Beta 2 (March 3, 2026).",
+    notes: "Colossus 2 upgrade to 1.5 GW / 550k+ Blackwell GPUs scheduled to complete late April 2026; internal testing expected through May; public beta May–June most-cited window; Polymarket at ~33% for by-June-30; full API access may slip to Q3.",
     url: "https://www.nxcode.io/resources/news/grok-5-release-date-latest-news-2026"
-  },
-  {
-    model: "DeepSeek V4",
-    codename: "",
-    company: "DeepSeek",
-    source: "Open",
-    date: "Late April–May 2026",
-    dateSort: "2026-05",
-    params: "~1T (~32–37B active MoE)",
-    modality: "Multimodal",
-    confidence: "Rumored",
-    notes: "Reuters/The Information (Apr 3, 2026): launch in next few weeks; V4-Lite live on API nodes since early April; runs on Huawei Ascend chips; 1M token context window.",
-    url: "https://findskill.ai/blog/deepseek-v4-release-date-specs/"
   },
   {
     model: "Kimi K3",
     codename: "",
     company: "Moonshot AI",
     source: "Open",
-    date: "2026 (TBD)",
-    dateSort: "2026-12",
+    date: "H1 2026 (imminent)",
+    dateSort: "2026-05",
     params: "~3–4T (rumored)",
     modality: "Multimodal",
     confidence: "Rumored",
-    notes: "Predecessor K2.6 Code Preview shipped to subscribers April 13, 2026; K3 still in development; Moonshot targets 10x better than K2.5; no official release date.",
+    notes: "K2.6 available on Cloudflare Workers AI as of April 20, 2026; Kimi Linear attention confirmed for K3 architecture; prediction markets at ~74% for pre-May launch; expected ~8× cheaper than GPT-5.5; 24–48 hr notice expected rather than formal pre-announcement.",
     url: "https://kimik3.xyz/"
   },
   {
@@ -346,7 +307,7 @@ const DATA = [
     params: "Unknown",
     modality: "Multimodal",
     confidence: "Speculated",
-    notes: "No official announcement; Alibaba iterating rapidly on Qwen 3.x (3.6-Plus Apr 2, 3.6-35B mid-Apr 2026); prediction markets ~65% before July 2026; key Qwen team lead departed March 2026 adding uncertainty.",
+    notes: "No official announcement; Alibaba actively deploying Qwen 3.6 series (3.6-Plus Apr 2, 3.6-35B mid-Apr 2026); Qwen family captured 50%+ global open-source model downloads as of March 2026; key team lead departed March 2026 adding uncertainty.",
     url: "https://manifold.markets/Bayesian/when-will-alibaba-release-qwen-4"
   },
   {
@@ -385,7 +346,7 @@ const DATA = [
     params: "~2T (~288B active MoE)",
     modality: "Multimodal",
     confidence: "Speculated",
-    notes: "Paused May 2025 per WSJ over limited progress and capability concerns; still unreleased as of April 2026; internal debate over whether public release will happen; may remain primarily a teacher model for Scout/Maverick.",
+    notes: "Paused May 2025 per WSJ over limited progress and capability concerns; still unreleased as of April 2026; currently serves primarily as a teacher model for Scout/Maverick via codistillation; internal debate over public release continues; no update from Meta as of April 2026.",
     url: "https://www.computerworld.com/article/3987990/meta-hits-pause-on-llama-4-behemoth-ai-model-amid-capability-concerns.html"
   }
 ];
