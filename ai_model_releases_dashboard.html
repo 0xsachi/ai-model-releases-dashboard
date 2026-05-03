@@ -188,7 +188,7 @@
 
 <header>
   <h1>Anticipated AI Model Releases</h1>
-  <div class="subtitle">Tracking upcoming frontier and open-source models · Last updated 2026-04-26</div>
+  <div class="subtitle">Tracking upcoming frontier and open-source models · Last updated 2026-05-03</div>
 </header>
 
 <div class="container">
@@ -255,7 +255,7 @@ const DATA = [
     params: "Unknown",
     modality: "Multimodal",
     confidence: "Speculated",
-    notes: "Codename 'Spud' shipped as GPT-5.5 on April 23, 2026 (not as GPT-6); GPT-6 proper is the next major numbered release after GPT-5.5; no official timeline from OpenAI; H2 2026 or later widely speculated; Polymarket market active.",
+    notes: "OpenAI shipped GPT-5.4 (Mar 5, 2026) and GPT-5.5 'Spud' (Apr 23, 2026) as interim releases; GPT-6 proper is the next major numbered release; no official timeline; H2 2026 or later widely speculated; Polymarket market active.",
     url: "https://polymarket.com/event/gpt-6-released-by"
   },
   {
@@ -263,12 +263,12 @@ const DATA = [
     codename: "",
     company: "Anthropic",
     source: "Closed",
-    date: "Q3 2026",
-    dateSort: "2026-08",
+    date: "Q2–Q3 2026",
+    dateSort: "2026-07",
     params: "Unknown",
     modality: "Multimodal",
     confidence: "Rumored",
-    notes: "Claude Sonnet 5 (Fennec) shipped April 1, 2026; Claude Mythos Preview (codename Capybara) released April 8 in restricted Project Glasswing consortium; Opus 5 expected as next general public flagship; timeline tied to safety evaluations.",
+    notes: "Current flagship is Opus 4.7 (Apr 16, 2026); Claude Sonnet 5 (Fennec) shipped Feb 3, 2026; Claude 5 Opus is the anticipated next major generation; prediction markets cluster around June–August 2026; timeline tied to safety evaluations.",
     url: "https://manifold.markets/CalibratedGhosts/will-anthropic-release-claude-5-opu"
   },
   {
@@ -281,21 +281,47 @@ const DATA = [
     params: "~6T (MoE)",
     modality: "Multimodal",
     confidence: "Rumored",
-    notes: "Colossus 2 upgrade to 1.5 GW / 550k+ Blackwell GPUs scheduled to complete late April 2026; internal testing expected through May; public beta May–June most-cited window; Polymarket at ~33% for by-June-30; full API access may slip to Q3.",
-    url: "https://www.nxcode.io/resources/news/grok-5-release-date-latest-news-2026"
+    notes: "Colossus 2 expansion to 1.5 GW / 550k+ Blackwell GPUs completed April 2026; internal testing ongoing through May; public beta May–June most-cited window; Polymarket at ~33% for by June 30; full API access may slip to Q3.",
+    url: "https://www.nxcode.io/resources/news/grok-5-release-date-6t-parameters-agi-xai-complete-guide-2026"
+  },
+  {
+    model: "Gemini 4",
+    codename: "",
+    company: "Google DeepMind",
+    source: "Closed",
+    date: "May 2026 (Google I/O, May 19)",
+    dateSort: "2026-05",
+    params: "Unknown",
+    modality: "Multimodal",
+    confidence: "Rumored",
+    notes: "Google I/O 2026 scheduled May 19 in Mountain View; Gemini 4 widely expected as keynote centerpiece; reported 84.6% ARC-AGI-2 score and 2M-token context window; current latest is Gemini 3.1 Pro (Apr 2026); no official confirmation of Gemini 4 branding yet.",
+    url: "https://io.google/2026/"
   },
   {
     model: "Kimi K3",
     codename: "",
     company: "Moonshot AI",
     source: "Open",
-    date: "H1 2026 (imminent)",
+    date: "May 2026 (10–31 window)",
     dateSort: "2026-05",
     params: "~3–4T (rumored)",
     modality: "Multimodal",
     confidence: "Rumored",
-    notes: "K2.6 available on Cloudflare Workers AI as of April 20, 2026; Kimi Linear attention confirmed for K3 architecture; prediction markets at ~74% for pre-May launch; expected ~8× cheaper than GPT-5.5; 24–48 hr notice expected rather than formal pre-announcement.",
+    notes: "K2.6 available on Cloudflare Workers AI as of Apr 20, 2026; Kimi Linear attention confirmed for K3 architecture; prediction markets narrowed to May 10–31 window; expected ~8× cheaper than GPT-5.5; 24–48 hr notice expected rather than formal pre-announcement.",
     url: "https://kimik3.xyz/"
+  },
+  {
+    model: "DeepSeek R2",
+    codename: "V4-Thinking",
+    company: "DeepSeek",
+    source: "Open Weights",
+    date: "Q3 2026 (Aug rumored)",
+    dateSort: "2026-08",
+    params: "Unknown",
+    modality: "Text",
+    confidence: "Rumored",
+    notes: "DeepSeek V4 preview (1.6T MoE, 49B active) released Apr 24, 2026; R2 is the anticipated dedicated reasoning model; analyst reports cite August 2026 as likely launch window; may ship as V4-Thinking variant; no official announcement from DeepSeek.",
+    url: "https://manifold.markets/Bayesian/when-will-deepseek-release-r2"
   },
   {
     model: "Qwen 4",
@@ -307,7 +333,7 @@ const DATA = [
     params: "Unknown",
     modality: "Multimodal",
     confidence: "Speculated",
-    notes: "No official announcement; Alibaba actively deploying Qwen 3.6 series (3.6-Plus Apr 2, 3.6-35B mid-Apr 2026); Qwen family captured 50%+ global open-source model downloads as of March 2026; key team lead departed March 2026 adding uncertainty.",
+    notes: "No official announcement; Qwen 3.5 (Feb 16, 2026) and Qwen 3.6 (Apr 2026) shipped; Qwen family continues to hold 50%+ global open-source model downloads; key team lead departed Mar 2026 adding uncertainty around next major version timeline.",
     url: "https://manifold.markets/Bayesian/when-will-alibaba-release-qwen-4"
   },
   {
@@ -320,7 +346,7 @@ const DATA = [
     params: "Unknown",
     modality: "Multimodal",
     confidence: "Speculated",
-    notes: "No official roadmap; GLM-5.1 open-sourced Apr 8, 2026 — next major version unannounced.",
+    notes: "No official roadmap; GLM-5.1 (754B MoE, MIT license) open-sourced Apr 8, 2026 — next major version unannounced.",
     url: "https://en.wikipedia.org/wiki/Z.ai"
   },
   {
@@ -333,7 +359,7 @@ const DATA = [
     params: "Unknown",
     modality: "Multimodal",
     confidence: "Speculated",
-    notes: "No official roadmap; M2.7 released Apr 12, 2026 — next major version unannounced.",
+    notes: "No official roadmap; M2.7 (self-evolving agent, open-sourced Apr 12, 2026) is current flagship — next major version unannounced.",
     url: "https://www.minimax.io/news/minimax-m27-en"
   },
   {
@@ -346,7 +372,7 @@ const DATA = [
     params: "~2T (~288B active MoE)",
     modality: "Multimodal",
     confidence: "Speculated",
-    notes: "Paused May 2025 per WSJ over limited progress and capability concerns; still unreleased as of April 2026; currently serves primarily as a teacher model for Scout/Maverick via codistillation; internal debate over public release continues; no update from Meta as of April 2026.",
+    notes: "Paused May 2025 per WSJ over capability concerns; still unreleased as of May 2026; serves primarily as teacher model for Scout/Maverick via codistillation; internal debate over public release continues; no update from Meta.",
     url: "https://www.computerworld.com/article/3987990/meta-hits-pause-on-llama-4-behemoth-ai-model-amid-capability-concerns.html"
   }
 ];
