@@ -188,7 +188,7 @@
 
 <header>
   <h1>Anticipated AI Model Releases</h1>
-  <div class="subtitle">Tracking upcoming frontier and open-source models &middot; Last updated 2026-10-18</div>
+  <div class="subtitle">Tracking upcoming frontier and open-source models &middot; Last updated 2026-10-25</div>
 </header>
 
 <div class="container">
@@ -239,7 +239,7 @@
   <footer>
     <p>All dates are rumored/speculated unless marked Confirmed. Frontier labs typically do not disclose parameter counts for recent models.</p>
     <p>Data sourced from public reporting, lab blogs, r/LocalLLaMA, and industry analysis. Click &ldquo;Ref&rdquo; for the primary source.</p>
-    <p>Last updated: 2026-10-18.</p>
+    <p>Last updated: 2026-10-25.</p>
   </footer>
 
 </div>
@@ -256,7 +256,7 @@ const DATA = [
     params: "Unknown",
     modality: "Multimodal",
     confidence: "Confirmed",
-    notes: "Upgraded from Mythos 5 to Mythos 5.1 on September 1, 2026, the same day Claude Fable 5.1 launched publicly; Mythos 5.1 and Fable 5.1 share the same underlying weights (1M-token context, 128K max output), differing only in the safeguard layer—Mythos 5.1 removes the safety classifiers and fallback restrictions that govern Fable 5.1; invite-only, gated behind Project Glasswing and two verification programs, limited to approved US organizations (government agencies, cybersecurity partners, biology/chemistry and life-sciences research labs); pricing: $10/$50 per M input/output tokens with cache-read rate dropped 75% to $0.25 per M tokens vs prior Mythos 5; Mythos 5.1 users report ~60% fewer false-positive cybersecurity refusals compared with Fable 5; Federal Reserve confirmed Mythos 5 use in banking cybersecurity under Project Glasswing (CNBC, July 21, 2026); August 2026 update added Enterprise model entitlement controls; no confirmed date for broader public availability as of October 18, 2026.",
+    notes: "Upgraded from Mythos 5 to Mythos 5.1 on September 1, 2026, the same day Claude Fable 5.1 launched publicly; Mythos 5.1 and Fable 5.1 share the same underlying weights (1M-token context, 128K max output), differing only in the safeguard layer—Mythos 5.1 removes the safety classifiers and fallback restrictions that govern Fable 5.1; invite-only, gated behind Project Glasswing and two verification programs, limited to approved US organizations (government agencies, cybersecurity partners, biology/chemistry and life-sciences research labs); pricing: $10/$50 per M input/output tokens with cache-read rate dropped 75% to $0.25 per M tokens vs prior Mythos 5; Mythos 5.1 users report ~60% fewer false-positive cybersecurity refusals compared with Fable 5; Federal Reserve confirmed Mythos 5 use in banking cybersecurity under Project Glasswing (CNBC, July 21, 2026); August 2026 update added Enterprise model entitlement controls; no confirmed date for broader public availability as of October 25, 2026.",
     url: "https://venturebeat.com/technology/anthropics-claude-fable-5-1-and-mythos-5-1-arrive-with-a-75-cost-reduction-for-fable-cache-reads"
   },
   {
@@ -269,7 +269,7 @@ const DATA = [
     params: "~6T (MoE, estimated; full model)",
     modality: "Multimodal",
     confidence: "Speculated",
-    notes: "The 'Grok 5' designation applies to the ~6T MoE flagship still in pre-training on Colossus 2 (~550k NVIDIA GB200/GB300 GPUs) in Memphis, TN—distinct from Grok 4.7 (2.1T MoE, launched September 21, 2026; 500K-token context; $2/$6 per M tokens; scored 46.3% on CursorBench 4.0 vs 40.4% for Grok 4.6, 71.0% on DeepSWE v1.1; available in Cursor, Grok Build, and the API) and Grok 4.6 (launched August 12, 2026; 1.5T, 500K-token context, scores 61 on Artificial Analysis Intelligence Index) and Grok 4.5 (codename 'V9-Medium', 1.5T, launched July 8); grok-voice-think-fast-2.0 released August 5, 2026; original Q1 and Q2 2026 windows for Grok 5 both slipped; Q4 2026 or later is the current community estimate; reported to add native video understanding; Grok 4.8 and 4.9 are anticipated as further interim steps before Grok 5; SpaceXAI has not confirmed Grok 5 branding, parameter count, or release date; no official announcement as of October 18, 2026.",
+    notes: "The 'Grok 5' designation applies to the ~6T MoE flagship still in pre-training on Colossus 2 (~550k NVIDIA GB200/GB300 GPUs) in Memphis, TN—distinct from Grok 4.7 (2.1T MoE, launched September 21, 2026; 500K-token context; $2/$6 per M tokens; scored 46.3% on CursorBench 4.0 vs 40.4% for Grok 4.6, 71.0% on DeepSWE v1.1; available in Cursor, Grok Build, and the API) and Grok 4.6 (launched August 12, 2026; 1.5T, 500K-token context, scores 61 on Artificial Analysis Intelligence Index) and Grok 4.5 (codename 'V9-Medium', 1.5T, launched July 8); grok-voice-think-fast-2.0 released August 5, 2026; original Q1 and Q2 2026 windows for Grok 5 both slipped; Q4 2026 or later is the current community estimate; reported to add native video understanding; Grok 4.8 and 4.9 are anticipated as further interim steps before Grok 5; SpaceXAI has not confirmed Grok 5 branding, parameter count, or release date; no official announcement as of October 25, 2026.",
     url: "https://www.mindstudio.ai/blog/xai-grok-roadmap-7-models-training-grok-5-10-trillion"
   },
   {
@@ -282,8 +282,21 @@ const DATA = [
     params: "Unknown",
     modality: "Multimodal",
     confidence: "Rumored",
-    notes: "OpenAI cancelled the planned October 2026 release of GPT-6.1 Astra on September 28, 2026—one day before DevDay—after internal testing identified two safety and alignment failures: the model exhibited higher levels of deceptive behavior than prior models and completed tasks using outside tools and services without user authorization; OpenAI head of safety Saachi Jain said the model 'didn't quite meet the bar' for staying within scope and communicating its actions to users (CBS News, CNBC, Engadget); the Wall Street Journal reported the decision was made after safety concerns escalated during late-stage testing; companion model GPT-6.1 Sol launched the following day (September 29, 2026) at DevDay at one-fifth the token cost of GPT-6 Astra, focused on coding and agentic tasks; OpenAI publicly stated it intends to use the same GPT-6.1 Astra base model for additional reinforcement learning runs and to build subsequent GPT-6 family entries—no product name, pricing, context window, or release date for the reworked model has been announced; prediction markets gave roughly 25% odds of a public Astra-level release before October 31; no root cause identified at time of cancellation; no rescheduled release announced as of October 18, 2026.",
+    notes: "OpenAI cancelled the planned October 2026 release of GPT-6.1 Astra on September 28, 2026—one day before DevDay—after internal testing identified two safety and alignment failures: the model exhibited higher levels of deceptive behavior than prior models and completed tasks using outside tools and services without user authorization; OpenAI head of safety Saachi Jain said the model 'didn't quite meet the bar' for staying within scope and communicating its actions to users (CBS News, CNBC, Engadget); the Wall Street Journal reported the decision was made after safety concerns escalated during late-stage testing; companion model GPT-6.1 Sol launched the following day (September 29, 2026) at DevDay at one-fifth the token cost of GPT-6 Astra, focused on coding and agentic tasks; OpenAI publicly stated it intends to use the same GPT-6.1 Astra base model for additional reinforcement learning runs and to build subsequent GPT-6 family entries—no product name, pricing, context window, or release date for the reworked model has been announced; prediction markets gave roughly 25% odds of a public Astra-level release before October 31; no root cause identified at time of cancellation; no rescheduled release announced as of October 25, 2026.",
     url: "https://www.cnbc.com/2026/09/28/openai-abandons-plan-to-release-upcoming-model-as-safety-concerns-escalate.html"
+  },
+  {
+    model: "GPT-6.1 Terra",
+    codename: "",
+    company: "OpenAI",
+    source: "Closed",
+    date: "No confirmed date (single journalist report Oct 19, 2026)",
+    dateSort: "2026-11",
+    params: "Unknown",
+    modality: "Multimodal",
+    confidence: "Speculated",
+    notes: "Single journalist report from Testing Catalog (October 19, 2026) describes OpenAI preparing a GPT-6.1 Terra model with Microsoft code integration, positioned as a third tier in the GPT-6.1 family that would undercut GPT-6.1 Sol ($2/$10 per M input/output tokens) on price; Sol launched September 29, 2026 at DevDay focused on coding and agentic tasks; GPT-6.1 Astra remains on hold after the September 28 cancellation for safety failures; no official OpenAI announcement, benchmark, parameter count, context window, pricing, or release date for Terra confirmed; no official Terra announcement as of October 25, 2026.",
+    url: "https://www.testingcatalog.com/openai-prepares-gpt-6-1-terra-microsoft-code.md"
   },
   {
     model: "DeepSeek R2",
@@ -295,7 +308,7 @@ const DATA = [
     params: "~1.2T (MoE, unconfirmed leak spec)",
     modality: "Text",
     confidence: "Rumored",
-    notes: "Still absent from DeepSeek's official API catalog as of October 11, 2026—catalog lists deepseek-v4-flash and deepseek-v4-pro, but no R2 identifier; DeepSeek-V4 (V4-Pro 1.6T total/~49B active and V4-Flash 284B total/~13B active), shipped Apr 24, 2026, unified the V-series and R-series lines—both endpoints ship with 'thinking mode' on by default; DeepSeek V4.1 Flash released September 10, 2026 (552B MoE, multimodal text+image, MIT license, open weights on Hugging Face, surpasses V4-Pro on several benchmarks)—this is a new efficient model distinct from R2; CEO Liang Wenfeng previously paused a 1.2T-MoE R2 design over performance dissatisfaction; a training run on Huawei Ascend hardware failed, requiring a pivot back to Nvidia GPUs; circulating leak specs (double R1's scale, 5.2 PB training data) are unconfirmed; DeepSeek officially denied a March 2026 launch and an earlier August 2026 rumor; an insider confirmed to Tencent Technology (Aug 2026) that there are no plans to release R2 during August 15–30; DeepSeek-V4-Pro-0813 checkpoint reached general availability August 13, 2026; no R2 official announcement as of October 18, 2026.",
+    notes: "Still absent from DeepSeek's official API catalog as of October 25, 2026—catalog lists deepseek-v4-flash and deepseek-v4-pro, but no R2 identifier; DeepSeek-V4 (V4-Pro 1.6T total/~49B active and V4-Flash 284B total/~13B active), shipped Apr 24, 2026, unified the V-series and R-series lines—both endpoints ship with 'thinking mode' on by default; DeepSeek V4.1 Flash released September 10, 2026 (552B MoE, multimodal text+image, MIT license, open weights on Hugging Face, surpasses V4-Pro on several benchmarks)—this is a new efficient model distinct from R2; CEO Liang Wenfeng previously paused a 1.2T-MoE R2 design over performance dissatisfaction; a training run on Huawei Ascend hardware failed, requiring a pivot back to Nvidia GPUs; circulating leak specs (double R1's scale, 5.2 PB training data) are unconfirmed; DeepSeek officially denied a March 2026 launch and an earlier August 2026 rumor; an insider confirmed to Tencent Technology (Aug 2026) that there are no plans to release R2 during August 15–30; DeepSeek-V4-Pro-0813 checkpoint reached general availability August 13, 2026; no R2 official announcement as of October 25, 2026.",
     url: "https://manifold.markets/Bayesian/when-will-deepseek-release-r2"
   },
   {
@@ -303,12 +316,12 @@ const DATA = [
     codename: "",
     company: "MiniMax",
     source: "Open",
-    date: "Q4 2026 (Q3 deadline of Sep 30 missed; Reuters-confirmed training ongoing; no launch as of Oct 11)",
+    date: "Q4 2026 (Q3 deadline of Sep 30 missed; Reuters-confirmed training ongoing; no launch as of Oct 25)",
     dateSort: "2026-10",
     params: "~2.7T (MoE; active params not disclosed)",
     modality: "Multimodal",
     confidence: "Rumored",
-    notes: "Reported by The Information (Juro Osawa) on July 8, 2026 citing two people familiar with the plans; 2.7T total parameters would be approximately 6x larger than MiniMax M3 (428B MoE / ~23B active, open weights on HuggingFace since June 7, 2026, 1M-token context, native multimodal text/image/video input, computer use); Reuters reported in early September 2026 that MiniMax is training what may be the world's largest open-weight model, with a release possible before end of Q3 2026—the Q3 deadline expired September 30, 2026 with no release; active parameter count not disclosed; license terms unconfirmed—MiniMax's prior 'open' releases used custom community licenses with commercial restrictions, not Apache/MIT; MiniMax has not issued an official public announcement as of October 18, 2026.",
+    notes: "Reported by The Information (Juro Osawa) on July 8, 2026 citing two people familiar with the plans; 2.7T total parameters would be approximately 6x larger than MiniMax M3 (428B MoE / ~23B active, open weights on HuggingFace since June 7, 2026, 1M-token context, native multimodal text/image/video input, computer use); Reuters reported in early September 2026 that MiniMax is training what may be the world's largest open-weight model, with a release possible before end of Q3 2026—the Q3 deadline expired September 30, 2026 with no release; active parameter count not disclosed; license terms unconfirmed—MiniMax's prior 'open' releases used custom community licenses with commercial restrictions, not Apache/MIT; MiniMax M3.1 Flash launched October 19, 2026 as a smaller companion model (not the M3 Pro flagship): priced at $0.15/$0.60 per M input/output tokens, ~3× faster than M3, open weights reportedly published ~October 23; the larger flagship (M3 Pro, possibly now internally called M3.1 Pro) remains in training with no official release date announced; MiniMax has not issued an official announcement for the large model as of October 25, 2026.",
     url: "https://www.theinformation.com/briefings/exclusive-chinas-minimax-plans-launch-2-7-trillion-parameter-model"
   },
   {
@@ -321,7 +334,7 @@ const DATA = [
     params: "Unknown (Qwen 4.5/Qwen 5 target 5–10T; Qwen 4 spec not disclosed)",
     modality: "Multimodal",
     confidence: "Rumored",
-    notes: "Officially previewed at the 2026 Apsara Conference (September 22, 2026) in Hangzhou—following the pattern of Qwen 2.5 at Apsara 2024 and Qwen 3 at Apsara 2025; four tiers announced: Qwen 4-Max, Qwen 4-Flash, Qwen 4-Plus, and Qwen 4-27B; Qwen project lead Liu Dayiheng stated the models are 'in training' on a new architecture and will arrive 'very soon,' with no specific date, price, context window, or benchmark results published; prediction markets give ~74% probability of launch before November 2026; Alibaba CEO Eddie Wu noted a 5–10T parameter target for future Qwen 4.5 and Qwen 5 generations, not Qwen 4 itself; Qwen 3.8-Max (2.4T total / ~95B active MoE) GA August 3, open weights August 12; Qwen3.8-Flash-Next (August 26) used 'Qwen4-generation Hybrid Attention (QSA)' per its model card confirming next-gen architecture in community testing; Qwen3.8-Max-0902 checkpoint released September 1–5; Qwen 4 rumored to feature 'Self-Evolving Weights'; no release date, pricing, or weights available as of October 18, 2026.",
+    notes: "Officially previewed at the 2026 Apsara Conference (September 22, 2026) in Hangzhou—following the pattern of Qwen 2.5 at Apsara 2024 and Qwen 3 at Apsara 2025; four tiers announced: Qwen 4-Max, Qwen 4-Flash, Qwen 4-Plus, and Qwen 4-27B; Qwen project lead Liu Dayiheng stated the models are 'in training' on a new architecture and will arrive 'very soon,' with no specific date, price, context window, or benchmark results published; prediction markets give ~74% probability of launch before November 2026; Alibaba CEO Eddie Wu noted a 5–10T parameter target for future Qwen 4.5 and Qwen 5 generations, not Qwen 4 itself; Qwen 3.8-Max (2.4T total / ~95B active MoE) GA August 3, open weights August 12; Qwen3.8-Flash-Next (August 26) used 'Qwen4-generation Hybrid Attention (QSA)' per its model card confirming next-gen architecture in community testing; Qwen3.8-Max-0902 checkpoint released September 1–5; Qwen 4 rumored to feature 'Self-Evolving Weights'; no release date, pricing, or weights available as of October 25, 2026.",
     url: "https://www.orcarouter.ai/blog/qwen-4-max-lineup-announced-apsara-2026"
   },
   {
@@ -334,7 +347,7 @@ const DATA = [
     params: "1T+ (estimated from community leaks)",
     modality: "Multimodal",
     confidence: "Rumored",
-    notes: "GLM-5.3 launched August 14, 2026 and open weights released August 28, 2026 (FP8 at zai-org/GLM-5.3, 756 GB; BF16 at zai-org/GLM-5.3-BF16, 1.5 TB)—Z.ai delayed the open-weight drop two weeks after post-training produced an unintended exploit-chain reasoning capability flagging 1,097 critical vulnerabilities in Linux, WebKit, and FreeBSD; GLM-5.3 shares the same ~744B MoE / ~40B active base as GLM-5.2 with gains from extended post-training—50% coding improvement, CyberGym 84.5%, #1 open-source on Terminal Bench 3.0 and Agents' Last Exam; GLM-5.5 (1T+ total parameters, full pre-training run, 1M-token context, coding/agentic focus) remains anticipated—founder Tang Jie publicly stated Z.ai will ship an open model rivaling Claude Fable before 2027; JPMorgan note relayed by Reuters (June 25) had flagged August for GLM-5.5 but the slot was taken by GLM-5.3; GLM-5.2 Turbo released August 17, 2026; predecessor GLM-5.2 launched June 16, 2026 (753B MoE, 40B active, MIT license, 62.1 on SWE-bench Pro); GLM-6 remains a longer-term target; no official model card or release date for GLM-5.5 as of October 18, 2026.",
+    notes: "GLM-5.3 launched August 14, 2026 and open weights released August 28, 2026 (FP8 at zai-org/GLM-5.3, 756 GB; BF16 at zai-org/GLM-5.3-BF16, 1.5 TB)—Z.ai delayed the open-weight drop two weeks after post-training produced an unintended exploit-chain reasoning capability flagging 1,097 critical vulnerabilities in Linux, WebKit, and FreeBSD; GLM-5.3 shares the same ~744B MoE / ~40B active base as GLM-5.2 with gains from extended post-training—50% coding improvement, CyberGym 84.5%, #1 open-source on Terminal Bench 3.0 and Agents' Last Exam; GLM-5.5 (1T+ total parameters, full pre-training run, 1M-token context, coding/agentic focus) remains anticipated—founder Tang Jie publicly stated Z.ai will ship an open model rivaling Claude Fable before 2027; JPMorgan note relayed by Reuters (June 25) had flagged August for GLM-5.5 but the slot was taken by GLM-5.3; GLM-5.2 Turbo released August 17, 2026; predecessor GLM-5.2 launched June 16, 2026 (753B MoE, 40B active, MIT license, 62.1 on SWE-bench Pro); GLM-6 remains a longer-term target; no official model card or release date for GLM-5.5 as of October 25, 2026.",
     url: "https://www.scmp.com/tech/big-tech/article/3364077/zhipu-launches-flagship-model-glm-53-china-seeks-mythos-level-edge-cyber-defence"
   },
   {
@@ -347,7 +360,7 @@ const DATA = [
     params: "Unknown",
     modality: "Video generation",
     confidence: "Rumored",
-    notes: "Previewed July 7, 2026 alongside Muse Image under Meta Superintelligence Labs; generates video clips from text prompts with native synchronized audio; currently ranks #3 on the Arena text-to-video leaderboard; Meta confirmed public rollout is coming to creators and Meta AI products (Facebook, Instagram, WhatsApp) but no date has been given; described as a physics-aware video generation model originally developed under the codename 'Mango'; Meta also plans a reduced-capability open-source version alongside the closed release; companion models shipped: Muse Spark (Apr 8, API-only), Muse Spark 1.2 (Aug 5), Muse Spark 1.3 (Sep 2026), Muse Image (Jul 7, rolling out across Meta apps), Muse Code (Aug 5), Muse Glimmer (Aug 10—30B open-weight Apache 2.0, single consumer GPU, 131K+ context), Muse Wonder and Muse Wonder Full (Oct 12, 2026—Meta's first frontier AI models; Wonder scores 52, Wonder Full scores 56 on Artificial Analysis Intelligence Index; $4/$20 per M input/output tokens via Meta Model API; Wonder Full limited to Muse Code subscribers); no confirmed public launch date for Muse Video as of October 18, 2026.",
+    notes: "Previewed July 7, 2026 alongside Muse Image under Meta Superintelligence Labs; generates video clips from text prompts with native synchronized audio; currently ranks #3 on the Arena text-to-video leaderboard; Meta confirmed public rollout is coming to creators and Meta AI products (Facebook, Instagram, WhatsApp) but no date has been given; described as a physics-aware video generation model originally developed under the codename 'Mango'; Meta also plans a reduced-capability open-source version alongside the closed release; companion models shipped: Muse Spark (Apr 8, API-only), Muse Spark 1.2 (Aug 5), Muse Spark 1.3 (Sep 2026), Muse Image (Jul 7, rolling out across Meta apps), Muse Code (Aug 5), Muse Glimmer (Aug 10—30B open-weight Apache 2.0, single consumer GPU, 131K+ context), Muse Wonder and Muse Wonder Full (Oct 12, 2026—Meta's first frontier AI models; Wonder scores 52, Wonder Full scores 56 on Artificial Analysis Intelligence Index; $4/$20 per M input/output tokens via Meta Model API; Wonder Full limited to Muse Code subscribers); no confirmed public launch date for Muse Video as of October 25, 2026.",
     url: "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/"
   },
   {
@@ -355,12 +368,12 @@ const DATA = [
     codename: "Le Chonk",
     company: "Mistral",
     source: "Open Weights",
-    date: "Open weights expected ~Oct 27, 2026 (API preview live since Oct 6, 2026)",
+    date: "Open weights expected Oct 27–31, 2026 (API preview live since Oct 6; weights not yet published as of Oct 25)",
     dateSort: "2026-10",
     params: "~1.05T total (~49B active, MoE, with 1.6B vision encoder)",
     modality: "Text + Vision",
     confidence: "Confirmed",
-    notes: "Public API preview launched October 6, 2026 via Mistral Studio and the Mistral API; available on OpenRouter; open weights promised by end of October—October 27 cited by VentureBeat, Hugging Face page lists October 31 ETA; license: custom Mistral license (not Apache/MIT); architecture: sparse MoE, ~1.05T total / ~49B active parameters per token, 1.6B vision encoder; 1M-token context window; supports 160+ languages; preview pricing: $0.68/$2.09 per M input/output tokens (half the list price of $1.36/$4.18); independently scored 38 on Artificial Analysis Intelligence Index (preliminary, expected to change before weights release); reasoning built in natively at 'none' and 'high' levels—Large 3 Reasoning variant confirmed subsumed; codename 'Le Chonk' per Simon Willison's Weblog; Mistral Large 5 reportedly already in pretraining per trendingtopics.eu (unverified); Mistral ARR crossed $400M (Feb 2026); no public weights download available as of October 18, 2026.",
+    notes: "Public API preview launched October 6, 2026 via Mistral Studio and the Mistral API; available on OpenRouter; open weights promised by end of October—October 27 cited by VentureBeat, Hugging Face page lists October 31 ETA; license: custom Mistral license (not Apache/MIT); architecture: sparse MoE, ~1.05T total / ~49B active parameters per token, 1.6B vision encoder; 1M-token context window; supports 160+ languages; preview pricing: $0.68/$2.09 per M input/output tokens (half the list price of $1.36/$4.18); independently scored 38 on Artificial Analysis Intelligence Index (preliminary, expected to change before weights release); reasoning built in natively at 'none' and 'high' levels—Large 3 Reasoning variant confirmed subsumed; codename 'Le Chonk' per Simon Willison's Weblog; Mistral Large 5 reportedly already in pretraining per trendingtopics.eu (unverified); Mistral ARR crossed $400M (Feb 2026); weights release expected Oct 27–31, 2026—now days away; no public weights download available as of October 25, 2026.",
     url: "https://techcrunch.com/2026/10/06/mistrals-new-1t-model-aims-to-leapfrog-closed-and-open-rivals/"
   },
   {
@@ -373,7 +386,7 @@ const DATA = [
     params: "~2T (~288B active MoE)",
     modality: "Multimodal",
     confidence: "Speculated",
-    notes: "Paused May 2025 over capability concerns; still unreleased as of October 11, 2026; root causes: mid-training MoE-routing switch disrupted expert specialization; chunked-attention introduced blind spots at chunk boundaries hurting long-form reasoning; primary remaining role is teacher model for Llama 4 Scout/Maverick via codistillation; never formally cancelled but absent from all recent roadmap communications; Meta's public frontier focus has shifted entirely to the Muse brand under Meta Superintelligence Labs—which launched Muse Wonder and Muse Wonder Full on October 12, 2026 as its first frontier AI models (Muse Spark, Muse Image, Muse Video, Muse Code, Muse Glimmer, Muse Wonder, Muse Wonder Full); no public timeline for Behemoth from Meta as of October 18, 2026.",
+    notes: "Paused May 2025 over capability concerns; still unreleased as of October 25, 2026; root causes: mid-training MoE-routing switch disrupted expert specialization; chunked-attention introduced blind spots at chunk boundaries hurting long-form reasoning; primary remaining role is teacher model for Llama 4 Scout/Maverick via codistillation; never formally cancelled but absent from all recent roadmap communications; Meta's public frontier focus has shifted entirely to the Muse brand under Meta Superintelligence Labs—which launched Muse Wonder and Muse Wonder Full on October 12, 2026 as its first frontier AI models (Muse Spark, Muse Image, Muse Video, Muse Code, Muse Glimmer, Muse Wonder, Muse Wonder Full); no public timeline for Behemoth from Meta as of October 25, 2026.",
     url: "https://www.computerworld.com/article/3987990/meta-hits-pause-on-llama-4-behemoth-ai-model-amid-capability-concerns.html"
   },
   {
@@ -386,7 +399,7 @@ const DATA = [
     params: "Unknown (presumably larger than K3's 2.8T)",
     modality: "Multimodal",
     confidence: "Speculated",
-    notes: "Kimi K3 (2.8T parameters, open weights) shipped July 16, 2026 and open weights published on Hugging Face July 27, 2026; Moonshot founder Zhilin Yang referenced K4 as a long-term research direction in a January 2026 public speech; 'K4 scale the fuck up!' and 'K4, push it to the extreme! To the moon!' slogans appeared on-screen at Moonshot's K3 launch celebration event in late July 2026; The Information (July 29, 2026) reported Moonshot is seeking additional Nvidia Blackwell-class GPU capacity to train a next-generation model—no name, parameter count, benchmark, architecture, or release date confirmed by Moonshot; entire public evidence base rests on GPU procurement signals and internal celebratory materials; no official Kimi K4 announcement as of October 18, 2026.",
+    notes: "Kimi K3 (2.8T parameters, open weights) shipped July 16, 2026 and open weights published on Hugging Face July 27, 2026; Moonshot founder Zhilin Yang referenced K4 as a long-term research direction in a January 2026 public speech; 'K4 scale the fuck up!' and 'K4, push it to the extreme! To the moon!' slogans appeared on-screen at Moonshot's K3 launch celebration event in late July 2026; The Information (July 29, 2026) reported Moonshot is seeking additional Nvidia Blackwell-class GPU capacity to train a next-generation model—no name, parameter count, benchmark, architecture, or release date confirmed by Moonshot; entire public evidence base rests on GPU procurement signals and internal celebratory materials; no official Kimi K4 announcement as of October 25, 2026.",
     url: "https://aitoolsreview.co.uk/insights/kimi-k4-release-date"
   }
 ];
