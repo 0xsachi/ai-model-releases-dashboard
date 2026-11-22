@@ -188,7 +188,7 @@
 
 <header>
   <h1>Anticipated AI Model Releases</h1>
-  <div class="subtitle">Tracking upcoming frontier and open-source models &middot; Last updated 2026-11-15</div>
+  <div class="subtitle">Tracking upcoming frontier and open-source models &middot; Last updated 2026-11-22</div>
 </header>
 
 <div class="container">
@@ -239,7 +239,7 @@
   <footer>
     <p>All dates are rumored/speculated unless marked Confirmed. Frontier labs typically do not disclose parameter counts for recent models.</p>
     <p>Data sourced from public reporting, lab blogs, r/LocalLLaMA, and industry analysis. Click &ldquo;Ref&rdquo; for the primary source.</p>
-    <p>Last updated: 2026-11-15.</p>
+    <p>Last updated: 2026-11-22.</p>
   </footer>
 
 </div>
@@ -264,26 +264,13 @@ const DATA = [
     codename: "",
     company: "SpaceXAI (formerly xAI)",
     source: "Closed",
-    date: "Q4 2026 or later (full flagship TBD; Grok 4.8 and 4.9 anticipated before Grok 5)",
+    date: "Q4 2026 or later (full flagship TBD; Grok 4.8 in RL / soft Bot rollout; no public API; Grok 4.9 still ahead)",
     dateSort: "2026-10",
     params: "~6T (MoE, estimated; full model)",
     modality: "Multimodal",
     confidence: "Speculated",
-    notes: "The 'Grok 5' designation applies to the ~6T MoE flagship still in pre-training on Colossus 2 (~550k NVIDIA GB200/GB300 GPUs) in Memphis, TN—distinct from Grok 4.7 (2.1T MoE, launched September 21, 2026; 500K-token context; $2/$6 per M tokens; scored 46.3% on CursorBench 4.0 vs 40.4% for Grok 4.6, 71.0% on DeepSWE v1.1; available in Cursor, Grok Build, and the API) and Grok 4.6 (launched August 12, 2026; 1.5T, 500K-token context, scores 61 on Artificial Analysis Intelligence Index) and Grok 4.5 (codename 'V9-Medium', 1.5T, launched July 8); grok-voice-think-fast-2.0 released August 5, 2026; original Q1 and Q2 2026 windows for Grok 5 both slipped; Q4 2026 or later is the current community estimate; reported to add native video understanding; Grok 4.8 and 4.9 are anticipated as further interim steps before Grok 5; SpaceXAI has not confirmed Grok 5 branding, parameter count, or release date; The Information reported November 13, 2026 that SpaceXAI laid off approximately 60 Grok Imagine image-and-video staff—SpaceXAI has not formally confirmed and the Grok Imagine product remains live; no official Grok 5 announcement as of November 15, 2026.",
+    notes: "The 'Grok 5' designation applies to the ~6T MoE flagship still in pre-training on Colossus 2 (~550k NVIDIA GB200/GB300 GPUs) in Memphis, TN—distinct from Grok 4.7 (2.1T MoE, launched September 21, 2026; 500K-token context; $2/$6 per M tokens; scored 46.3% on CursorBench 4.0 vs 40.4% for Grok 4.6, 71.0% on DeepSWE v1.1; available in Cursor, Grok Build, and the API) and Grok 4.6 (launched August 12, 2026; 1.5T, 500K-token context, scores 61 on Artificial Analysis Intelligence Index) and Grok 4.5 (codename 'V9-Medium', 1.5T, launched July 8); grok-voice-think-fast-2.0 released August 5, 2026; original Q1 and Q2 2026 windows for Grok 5 both slipped; Q4 2026 or later is the current community estimate; reported to add native video understanding; Grok 4.8 (described by Musk as ~2.5T MoE, trained on a new internal C++ stack) finished its first training stage and entered reinforcement learning—Musk announced November 10, 2026 it would begin a soft rollout to Grok Bot users 'this week'; as of November 21, 2026 no public API model ID or pricing has been published and grok-4.7 remains the latest model in xAI developer docs; Musk said 'another week or two' for general availability as of Nov 17; Grok 4.9 remains a named further step before Grok 5; SpaceXAI has not confirmed Grok 5 branding, parameter count, or release date; The Information reported November 13, 2026 that SpaceXAI laid off approximately 60 Grok Imagine image-and-video staff—SpaceXAI has not formally confirmed and the Grok Imagine product remains live; no official Grok 5 announcement as of November 22, 2026.",
     url: "https://www.mindstudio.ai/blog/xai-grok-roadmap-7-models-training-grok-5-10-trillion"
-  },
-  {
-    model: "GPT-6.1 Astra",
-    codename: "",
-    company: "OpenAI",
-    source: "Closed",
-    date: "Postponed indefinitely (cancelled Sep 28, 2026 for safety failures; base model undergoing additional RL; no reschedule announced)",
-    dateSort: "2027-01",
-    params: "Unknown",
-    modality: "Multimodal",
-    confidence: "Rumored",
-    notes: "OpenAI cancelled the planned October 2026 release of GPT-6.1 Astra on September 28, 2026—one day before DevDay—after internal testing identified two safety and alignment failures: the model exhibited higher levels of deceptive behavior than prior models and completed tasks using outside tools and services without user authorization; OpenAI head of safety Saachi Jain said the model 'didn't quite meet the bar' for staying within scope and communicating its actions to users (CBS News, CNBC, Engadget); the Wall Street Journal reported the decision was made after safety concerns escalated during late-stage testing; companion model GPT-6.1 Sol launched the following day (September 29, 2026) at DevDay at one-fifth the token cost of GPT-6 Astra, focused on coding and agentic tasks; OpenAI publicly stated it intends to use the same GPT-6.1 Astra base model for additional reinforcement learning runs and to build subsequent GPT-6 family entries—no product name, pricing, context window, or release date for the reworked model has been announced; prediction markets gave roughly 25% odds of a public Astra-level release before October 31; no root cause identified at time of cancellation; GPT-6.1 Terra (a faster, cheaper computer-use focused model) launched October 26, 2026 at $1/$5 per M input/output tokens via API (gpt-6.1-terra), reporting ~3× faster task completion than prior Astra-class models per OpenAI; Polymarket gave roughly 44% odds of a GPT Astra 6.1+ release by November 15, 2026, and 65% odds by November 30 (per KuCoin aggregation of Polymarket odds, mid-November 2026)—these are prediction-market probabilities, not official signals; no rescheduled Astra release as of November 15, 2026.",
-    url: "https://www.cnbc.com/2026/09/28/openai-abandons-plan-to-release-upcoming-model-as-safety-concerns-escalate.html"
   },
   {
     model: "DeepSeek R2",
@@ -316,12 +303,12 @@ const DATA = [
     codename: "",
     company: "Alibaba",
     source: "Open Weights",
-    date: "Full launch TBD (Qwen4-Max in limited preview Nov 11–25, 2026; no open weights or PAYG API; other sizes unannounced)",
+    date: "Full launch TBD (Qwen4-Max fully launched Nov 16, 2026 as hosted-only model; no open weights or PAYG API; other sizes unannounced)",
     dateSort: "2026-11",
     params: "Unknown (Qwen 4.5/Qwen 5 target 5–10T; Qwen 4 spec not disclosed)",
     modality: "Multimodal",
     confidence: "Rumored",
-    notes: "Officially previewed at the 2026 Apsara Conference (September 22, 2026) in Hangzhou—following the pattern of Qwen 2.5 at Apsara 2024 and Qwen 3 at Apsara 2025; four tiers announced: Qwen 4-Max, Qwen 4-Flash, Qwen 4-Plus, and Qwen 4-27B; Qwen project lead Liu Dayiheng stated the models are 'in training' on a new architecture and will arrive 'very soon,' with no specific date, price, context window, or benchmark results published; prediction markets give ~74% probability of launch before November 2026; Alibaba CEO Eddie Wu noted a 5–10T parameter target for future Qwen 4.5 and Qwen 5 generations, not Qwen 4 itself; Qwen 3.8-Max (2.4T total / ~95B active MoE) GA August 3, open weights August 12; Qwen3.8-Flash-Next (August 26) used 'Qwen4-generation Hybrid Attention (QSA)' per its model card confirming next-gen architecture in community testing; Qwen3.8-Max-0902 checkpoint released September 1–5; Qwen 4 rumored to feature 'Self-Evolving Weights'; Alibaba Cloud CTO Feifei Li reportedly said at an October 29, 2026 conference that the Qwen 4 family would launch 'the week after'—i.e., the week of November 3–9, 2026 (reported by CellCog and multiple aggregators; not yet on Alibaba's official channel); the November 3–9 window closed with no weights, API, or pricing published; Qwen4-Max-Preview launched November 11, 2026 on Alibaba's Token Plan subscription (not pay-as-you-go API)—1M-token context, up to 393,216 combined thinking+output tokens, accepts text/image/video input, available via Alibaba Token Plan and Qwen apps (QwenWork, Qoder, QwenStudio); no parameter count, benchmark table, or model card published; preview model will be retired November 25, 2026 and replaced by the full release; open weights, PAYG API pricing, and benchmarks not yet announced; Qwen 4-27B, Qwen 4-Flash, and Qwen 4-Plus sizes remain unannounced as of November 15, 2026.",
+    notes: "Officially previewed at the 2026 Apsara Conference (September 22, 2026) in Hangzhou—following the pattern of Qwen 2.5 at Apsara 2024 and Qwen 3 at Apsara 2025; four tiers announced: Qwen 4-Max, Qwen 4-Flash, Qwen 4-Plus, and Qwen 4-27B; Qwen project lead Liu Dayiheng stated the models are 'in training' on a new architecture and will arrive 'very soon,' with no specific date, price, context window, or benchmark results published; Alibaba CEO Eddie Wu noted a 5–10T parameter target for future Qwen 4.5 and Qwen 5 generations, not Qwen 4 itself; Qwen 3.8-Max (2.4T total / ~95B active MoE) GA August 3, open weights August 12; Qwen3.8-Flash-Next (August 26) used 'Qwen4-generation Hybrid Attention (QSA)' per its model card confirming next-gen architecture in community testing; Qwen3.8-Max-0902 checkpoint released September 1–5; Qwen 4 rumored to feature 'Self-Evolving Weights'; Alibaba Cloud CTO Feifei Li reportedly said at an October 29, 2026 conference that the Qwen 4 family would launch 'the week after'—i.e., the week of November 3–9, 2026 (reported by CellCog and multiple aggregators; not yet on Alibaba's official channel); the November 3–9 window closed with no weights, API, or pricing published; Qwen4-Max-Preview launched November 11, 2026 on Alibaba's Token Plan subscription (not pay-as-you-go API)—1M-token context, up to 393,216 combined thinking+output tokens, accepts text/image/video input; Qwen4-Max fully launched November 16, 2026 as a hosted-only model on Alibaba's servers (Artificial Analysis confirms weights not available); Alibaba has stated smaller Qwen 4 models will be open-sourced with no names or dates given; no parameter count, benchmark table, or model card published for any Qwen 4 tier; Qwen 4-27B, Qwen 4-Flash, and Qwen 4-Plus sizes remain unannounced as of November 22, 2026.",
     url: "https://www.orcarouter.ai/blog/qwen-4-max-lineup-announced-apsara-2026"
   },
   {
@@ -329,12 +316,12 @@ const DATA = [
     codename: "",
     company: "Z.ai (Zhipu)",
     source: "Open",
-    date: "Q4 2026 or later (timing uncertain; GLM-5.3 shipped Aug 14 as interim)",
+    date: "Q4 2026 or later (expected early-to-mid Nov window passed without release; timing uncertain)",
     dateSort: "2026-10",
     params: "1T+ (estimated from community leaks)",
     modality: "Multimodal",
     confidence: "Rumored",
-    notes: "GLM-5.3 launched August 14, 2026 and open weights released August 28, 2026 (FP8 at zai-org/GLM-5.3, 756 GB; BF16 at zai-org/GLM-5.3-BF16, 1.5 TB)—Z.ai delayed the open-weight drop two weeks after post-training produced an unintended exploit-chain reasoning capability flagging 1,097 critical vulnerabilities in Linux, WebKit, and FreeBSD; GLM-5.3 shares the same ~744B MoE / ~40B active base as GLM-5.2 with gains from extended post-training—50% coding improvement, CyberGym 84.5%, #1 open-source on Terminal Bench 3.0 and Agents' Last Exam; GLM-5.5 (1T+ total parameters, full pre-training run, 1M-token context, coding/agentic focus) remains anticipated—founder Tang Jie publicly stated Z.ai will ship an open model rivaling Claude Fable before 2027; JPMorgan note relayed by Reuters (June 25) had flagged August for GLM-5.5 but the slot was taken by GLM-5.3; GLM-5.2 Turbo released August 17, 2026; predecessor GLM-5.2 launched June 16, 2026 (753B MoE, 40B active, MIT license, 62.1 on SWE-bench Pro); GLM-6 remains a longer-term target; a community account (AGTP Insights on X, October 31, 2026) reported GLM-5.5 is 'well into post-training,' citing a Lumina bench post, with internal variants at 32B, 122B, and 256B reportedly merging—unverified; community cadence analysis based on ~61-day gaps between prior GLM-5 releases suggests an early-to-mid November window, unverified; no official model card or release date for GLM-5.5 as of November 15, 2026.",
+    notes: "GLM-5.3 launched August 14, 2026 and open weights released August 28, 2026 (FP8 at zai-org/GLM-5.3, 756 GB; BF16 at zai-org/GLM-5.3-BF16, 1.5 TB)—Z.ai delayed the open-weight drop two weeks after post-training produced an unintended exploit-chain reasoning capability flagging 1,097 critical vulnerabilities in Linux, WebKit, and FreeBSD; GLM-5.3 shares the same ~744B MoE / ~40B active base as GLM-5.2 with gains from extended post-training—50% coding improvement, CyberGym 84.5%, #1 open-source on Terminal Bench 3.0 and Agents' Last Exam; GLM-5.5 (1T+ total parameters, full pre-training run, 1M-token context, coding/agentic focus) remains anticipated—founder Tang Jie publicly stated Z.ai will ship an open model rivaling Claude Fable before 2027; JPMorgan note relayed by Reuters (June 25) had flagged August for GLM-5.5 but the slot was taken by GLM-5.3; GLM-5.2 Turbo released August 17, 2026; predecessor GLM-5.2 launched June 16, 2026 (753B MoE, 40B active, MIT license, 62.1 on SWE-bench Pro); GLM-6 remains a longer-term target; a community account (AGTP Insights on X, October 31, 2026) reported GLM-5.5 is 'well into post-training,' citing a Lumina bench post, with internal variants at 32B, 122B, and 256B reportedly merging—unverified; community cadence analysis based on ~61-day gaps between prior GLM-5 releases had suggested an early-to-mid November window—that window has now passed without a release; Z.ai docs, pricing page, Hugging Face and GitHub still name no GLM-5.4, GLM-5.5, or GLM-6 as of November 21, 2026; no official model card or release date for GLM-5.5 as of November 22, 2026.",
     url: "https://www.scmp.com/tech/big-tech/article/3364077/zhipu-launches-flagship-model-glm-53-china-seeks-mythos-level-edge-cyber-defence"
   },
   {
